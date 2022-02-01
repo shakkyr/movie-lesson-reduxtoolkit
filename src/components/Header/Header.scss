@@ -1,21 +1,22 @@
-@import '../../common/colors.scss';
+@import "../../common/colors.scss";
 
-.movie__header {
-    background-color:$secondary-color; 
-    height: 72px;
-    padding: 0px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+.header {
+  background-color: $secondary-color;
+  height: 72px;
+  padding: 0px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.movie__logo {
-    color: $font-primary;
-    font-size: 20px;
-    font-weight: 600;
+.logo {
+  color: $font-primary;
+  font-size: 20px;
+  font-weight: 600;
 }
 
-.movie__user__image , .movie__user__image img {
-    width: 38px;
-    height: 38px;
+.user-image,
+.user-image img {
+  width: 38px;
+  height: 38px;
 }

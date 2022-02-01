@@ -1,29 +1,23 @@
-import React, {useEffect} from 'react';
-import MovieListing from '../MovieDetail/MovieDetail'
-import {APIKey} from '../../common/apis/MovieApiKey'
-import movieApi from '../../common/apis/movieApi';
+import React, { useEffect } from "react";
+import MovieListing from "../MovieListing/MovieListing";
 
+import { useDispatch } from "react-redux";
+import {
+  fetchAsyncMovies,
+  fetchAsyncShows,
+} from "../../features/movies/movieSlice";
 const Home = () => {
-
-    // useEffect(() => {
-    //     const movieText = 'spider';
-
-    //     const fetchMovies = async () => {
-    //         const response = await movieApi.get(`?apikey=${APIKey}&s=${movieText}&type=movie`)
-    //         .catch(error=>{
-    //             console.log("error", error);
-    //         })
-    //         console.log(response);
-    //     }
-    //     fetchMovies();
-    // },[])
-
-    return (
-        <div>
-            <div className="movie__banner_img"></div>
-            <MovieListing />
-        </div>
-    );
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchAsyncMovies());
+    dispatch(fetchAsyncShows());
+  }, [dispatch]);
+  return (
+    <div>
+      <div className="banner-img"></div>
+      <MovieListing />
+    </div>
+  );
 };
 
 export default Home;
